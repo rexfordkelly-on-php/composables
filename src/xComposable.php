@@ -12,7 +12,7 @@ class xComposable {
     */
     static function load_configs( $path, $preserve = true ) {
         $tmp = require $path;
-        return $preserve ? parse_and_preserve_refs($tmp, false) : parse_configs($tmp);
+        return $preserve ? self::parse_and_preserve_refs($tmp, false) : self::parse_configs($tmp);
     }
 
 
@@ -22,7 +22,7 @@ class xComposable {
     */
     static function mount_configs( $path ) {
         $tmp = require $path;
-        return parse_and_preserve_refs($tmp);
+        return self::parse_and_preserve_refs($tmp);
     }
 
 
@@ -39,7 +39,7 @@ class xComposable {
             if(!is_callable($value) && !is_object($value) && !is_array($value)) 
                 $simples[$key] = $value;
 
-        $configs = array_merge($configs, parse_configs($simples));
+        $configs = array_merge($configs, self::parse_configs($simples));
         
         if($asObject){
             $scope = new xScope;
