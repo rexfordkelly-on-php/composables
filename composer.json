@@ -1,5 +1,5 @@
 {
-    "name": "rexfordge/composables",
+    "name": "rexfordge/x",
     "description": "Simple Library to parse composable arrays/configs",
     "require": {},
     "repositories": [
@@ -10,7 +10,7 @@
     ],
     "autoload": {
         "psr-4": {
-        	"Rexfordge\\x\\": "src"
+        	"Rexfordge\\x\\": "src/"
         }
     }
 }
