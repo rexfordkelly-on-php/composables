@@ -7,12 +7,15 @@
 
         //... Your Configs file, using composable configurations.
 
-            return [
-                'app_root' => __DIR__,
-                'app_name' => 'My App',
-                'app_version' => '0.0.1',
-                'app_loader' => '{{ app_root }}/{{ app_name }}/{{ app_version }}/index.php'
-            ];
+        return [
+            'app_root' => __DIR__,
+            'app_name' => 'My App',
+            'app_version' => '0.0.1',
+            'app_loader' => '{{ app_root }}/{{ app_name }}/{{ app_version }}/index.php',
+            'echo' => function($scope, $key){
+                echo $scope->{$key};
+            }
+        ];
 
         //... Bootstraping your configs
 
