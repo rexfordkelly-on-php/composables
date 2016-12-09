@@ -1,5 +1,16 @@
 {
     "name": "rexfordge/composables",
     "description": "Simple Library to parse composable arrays/configs",
-    "require": {}
+    "require": {},
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/rexfordkelly-on-php/composables.git"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+        	"Rexfordge\\x\\Composables": "src"
+        }
+    }
 }
