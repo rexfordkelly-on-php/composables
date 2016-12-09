@@ -8,9 +8,9 @@ class xComposable {
 
     /**
         Simple helper to make including/requiring config files 
-        fluent. load_configs will return and array.
+        fluent. load will return and array.
     */
-    static function load_configs( $path, $preserve = true ) {
+    static function load( $path, $preserve = true ) {
         $tmp = require $path;
         return $preserve ? self::parse_and_preserve_refs($tmp, false) : self::parse_configs($tmp);
     }
@@ -18,9 +18,9 @@ class xComposable {
 
     /**
         Simple helper to make including/requiring config files 
-        fluent, mount_configs will return an object
+        fluent, mount will return an object
     */
-    static function mount_configs( $path ) {
+    static function mount( $path ) {
         $tmp = require $path;
         return self::parse_and_preserve_refs($tmp);
     }

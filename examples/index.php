@@ -2,5 +2,5 @@
 
 	use Rexfordge\x\xComposable as Rx;
 
-	$c = Rx::mount_configs('config.php');
+	$c = Rx::mount('config.php');
 	$c->echo('app_version');
