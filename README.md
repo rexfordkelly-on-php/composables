@@ -75,6 +75,26 @@
 
         // ***************************************************
 
+    ## Json files
+
+        {
+            "app_name": "{{ app_url }}/{{ app_version }}",
+            "app_version": "0.0.1",
+            "app_url": "http://www.google.com"
+        }
+
+        USAGE: is the same as above.
+
+    ## txt files
+
+        {
+            "app_name": "{{ app_url }}/{{ app_version }}",
+            "app_version": "0.0.1",
+            "app_url": "http://www.google.com"
+        }
+
+        USAGE: is the same as above.
+
     $configs, is an array containing key => value pairs. Where the values may contain
     inline placeholders/variables, strings wrapped in "{{ ... }}". Basicly we will loop through 
     the $configs array, extracting a collection of tokens, and iterativly perform a replacement
