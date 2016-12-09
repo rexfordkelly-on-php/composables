@@ -11,10 +11,7 @@
             'app_root' => __DIR__,
             'app_name' => 'My App',
             'app_version' => '0.0.1',
-            'app_loader' => '{{ app_root }}/{{ app_name }}/{{ app_version }}/index.php',
-            'echo' => function($scope, $key){
-                echo $scope->{$key};
-            }
+            'app_loader' => '{{ app_root }}/{{ app_name }}/{{ app_version }}/index.php'
         ];
 
         //... Bootstraping your configs
@@ -49,8 +46,8 @@
                 'app_name' => 'My App',
                 'app_version' => '0.0.1',
                 'app_loader' => '{{ app_root }}/{{ app_name }}/{{ app_version }}/index.php',
-                "echo" => function($key) {
-                    echo $this->{$key};
+                'echo' => function($scope, $key){
+                    echo $scope->{$key};
                 }
             ];
 
@@ -71,6 +68,10 @@
             USAGE: when preserved as an array.
 
             $configs['echo']('app_loader') // -> "/path/to/app/root/my_app/0.0.1/index.php"
+
+            USAGE: when trnasformed into Object.
+
+            $configs->echo('app_loader') // -> "/path/to/app/root/my_app/0.0.1/index.php"
 
         // ***************************************************
 
