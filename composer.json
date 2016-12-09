@@ -2,6 +2,8 @@
     "name": "rexfordge/x",
     "description": "to be determined",
     "require": {},
+    "type": "package",
+    "version": "3.1.7",
     "repositories": [
         {
             "type": "vcs",
@@ -12,5 +14,13 @@
         "psr-4": {
         	"Rexfordge\\x\\": "src/"
         }
-    }
+    },
+    "authors": [
+        {
+            "name": "Rex Kelly",
+            "email": "rexfordkelly@gmail.com",
+            "homepage": "http://github.com/rexfordkelly-on-php/",
+            "role": "Developer"
+        }
+    ]
 }
