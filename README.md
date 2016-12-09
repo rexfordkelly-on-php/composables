@@ -87,13 +87,24 @@
 
     ## txt files
 
-        {
-            "app_name": "{{ app_url }}/{{ app_version }}",
-            "app_version": "0.0.1",
-            "app_url": "http://www.google.com"
-        }
+        //---
+            John Doe
+            Welcome {{ 0 }} to the new world.
+            {{1}} You should be see this!
+        //---
 
-        USAGE: is the same as above.
+        As there are no keys just line numbers with text files, substitutions are based on line numbers.
+        Of course it's a zero based index.
+
+        //---
+            John Doe
+            Welcome {{ 0 }} to the new world.
+            {{1}} You should be see this!
+            Welcome John Doe to the new world.
+            Welcome John Doe to the new world. you should see this!
+        //---
+
+        USAGE:
 
     $configs, is an array containing key => value pairs. Where the values may contain
     inline placeholders/variables, strings wrapped in "{{ ... }}". Basicly we will loop through 

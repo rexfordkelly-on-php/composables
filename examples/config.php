@@ -9,6 +9,6 @@ return [
 		echo $scope->{$key};
 	},
 	"run" => function($key) {
-		echo $key;
+		return $key;
 	}
 ];
