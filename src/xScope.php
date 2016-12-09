@@ -4,7 +4,7 @@
     PHP will not allow us to simply call Closures that are assigned to props,
     we must employ the __call magic method to accomplish what we want.
 */
- class xScope {
+ class xContext {
 
     function __construct($members = array()) {
         $this->assign($members);

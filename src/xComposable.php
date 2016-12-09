@@ -42,7 +42,7 @@ class xComposable {
         $configs = array_merge($configs, self::parse_configs($simples));
         
         if($asObject){
-            $scope = new xScope;
+            $scope = new xContext;
         
             foreach ($configs as $key => $value) 
                 $scope->{$key} = $value;
