@@ -12,7 +12,7 @@ class xComposable {
     */
     static function load( $path, $preserve = true ) {
         $tmp = require $path;
-        return $preserve ? self::parse_and_preserve_refs(self::read($path), false) : self::parse_configs(self::read($path));
+        return $preserve ? self::parse_and_preserve_refs(self::extract($path), false) : self::parse_configs(self::extract($path));
     }
 
 
@@ -21,14 +21,14 @@ class xComposable {
         fluent, mount will return an object
     */
     static function mount( $path ) {
-        return self::parse_and_preserve_refs(self::read($path));
+        return self::parse_and_preserve_refs(self::extract($path));
     }
 
 
     /**
         Read a file from the FS and 
     */
-    static function read($path) {
+    static function extract($path) {
         switch(pathinfo($path)['extension'])
         {
             case "php":
