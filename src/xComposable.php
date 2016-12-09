@@ -35,10 +35,11 @@ class xComposable {
                 return require $path;
             break;
 
-            case "json":
-                $tmp = require $path;
-                return json_decode($tmp);
-            break;
+            // Coming Soon, need to workout what happens downstream.
+            // case "json":
+            //     $tmp = require $path;
+            //     return json_decode($tmp);
+            // break;
 
             case "txt":
                 return explode("\n", file_get_contents($path));

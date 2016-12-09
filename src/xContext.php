@@ -10,6 +10,12 @@
         $this->assign($members);
     }
 
+    function last (){
+        $cnt = count(get_object_vars($this)) -1;
+        if( $this->{$cnt} ) return $this->{$cnt};
+        return NULL;
+    }
+    
     function assign ($members){
         foreach ($members as $name => $value) {
             $this->$name = $value;

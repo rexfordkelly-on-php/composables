@@ -2,5 +2,8 @@
 
 	use Rexfordge\x\xComposable as Rx;
 
-	$c = Rx::mount('config.php');
-	$c->echo('app_version');
+	// Mount Array, transform into xContext object.
+	$Rx::mount('config.php')->echo('app_version');
+
+	// Txt files
+	echo Rx::mount('messages.txt')->last();

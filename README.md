@@ -96,13 +96,8 @@
         As there are no keys just line numbers with text files, substitutions are based on line numbers.
         Of course it's a zero based index.
 
-        //---
-            John Doe
-            Welcome {{ 0 }} to the new world.
-            {{1}} You should be see this!
-            Welcome John Doe to the new world.
-            Welcome John Doe to the new world. you should see this!
-        //---
+            $c = X::mount('messages.txt');
+            echo $c->{count(get_object_vars($c)) -1}; // -> "Welcome John Doe to the new world. You should be see this!"
 
         USAGE:
 

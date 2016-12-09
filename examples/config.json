@@ -1,5 +1,6 @@
 {
-	"app_name": "{{ app_url }}/{{ app_version }}",
-	"app_version": "0.0.1",
-	"app_url": "http://www.google.com"
+    "app_root": "/var/www/appdir",
+    "app_name": "My App",
+    "app_version": "0.0.1",
+    "app_loader": "{{ app_root }}/{{ app_name }}/{{ app_version }}/index.php",
 }
