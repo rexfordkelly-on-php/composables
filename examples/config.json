@@ -1,0 +1,5 @@
+{
+	"app_name": "{{ app_url }}/{{ app_version }}",
+	"app_version": "0.0.1",
+	"app_url": "http://www.google.com"
+}

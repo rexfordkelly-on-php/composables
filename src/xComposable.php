@@ -12,7 +12,7 @@ class xComposable {
     */
     static function load( $path, $preserve = true ) {
         $tmp = require $path;
-        return $preserve ? self::parse_and_preserve_refs($tmp, false) : self::parse_configs($tmp);
+        return $preserve ? self::parse_and_preserve_refs(self::read($path), false) : self::parse_configs(self::read($path));
     }
 
 
@@ -21,10 +21,34 @@ class xComposable {
         fluent, mount will return an object
     */
     static function mount( $path ) {
-        $tmp = require $path;
-        return self::parse_and_preserve_refs($tmp);
+        return self::parse_and_preserve_refs(self::read($path));
     }
 
+
+    /**
+        Read a file from the FS and 
+    */
+    static function read($path) {
+        switch(pathinfo($path)['extension'])
+        {
+            case "php":
+                return require $path;
+            break;
+
+            case "json":
+                $tmp = require $path;
+                return json_decode($tmp);
+            break;
+
+            case "txt":
+                return explode("\n", file_get_contents($path));
+            break;
+
+            default:
+                throw new Exception("Unknown file extension", 1);
+            break;
+        }
+    }
 
     /**
         Helper to preserve and enhance references and closures.
