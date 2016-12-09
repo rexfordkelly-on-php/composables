@@ -1,10 +1,6 @@
-<?php
-    include 'composable_configs.php';
+<?php require __DIR__ . '../vendor/autoload.php';
 
-    $configs = mount_configs('config.php');
-    $configs->echo('app_version');
-    echo $configs->app_path;
+	use Rexfordge\x\xComposable as Rx;
 
-    $configs = load_configs('config.php');
-    $configs['run']('app_version');
-    echo $configs['app_path'];
+	$c = Rx::mount_configs('config.php');
+	$c->echo('app_version');
