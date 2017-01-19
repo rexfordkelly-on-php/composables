@@ -13,7 +13,8 @@
     "autoload": {
         "psr-4": {
         	"Rexfordge\\x\\": "src/"
-        }
+        },
+        "files" : ["src/xBootstrapper.php"]
     },
     "authors": [
         {
