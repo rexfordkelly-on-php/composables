@@ -15,6 +15,10 @@
         if( $this->{$cnt} ) return $this->{$cnt};
         return NULL;
     }
+
+    function instance (){
+        return $this;
+    }
     
     function each ($func){
         foreach (get_object_vars($this) as $key => $value) {
@@ -30,9 +34,13 @@
         return $curry;
     }
 
-    function assign ($members){
-        foreach ($members as $name => $value) {
-            $this->$name = $value;
+    function assign ($members, $value = NULL ){
+        if(is_array($members)){
+            foreach ($members as $name => $value) {
+                $this->$name = $value;
+            }
+        } else {
+            $this->{$members} = $value;
         }
     }
 

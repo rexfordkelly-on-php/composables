@@ -1,5 +1,5 @@
 <?php
-
+use Rexfordge\x\xCheckpoint as xCheckpoint;
 use Rexfordge\x\xURLFromPath as xURLFromPath;
 use Rexfordge\x\xComposable as xComposable;
 use Rexfordge\x\xContext as xContext;
@@ -17,4 +17,8 @@ function Context($raw){
 // Sudo Facade for xContext
 function Composable($raw){
 	return ( new xComposable( $raw ) );
+}
+
+function Checkpoint( $block ){
+	echo $block; exit;
 }
