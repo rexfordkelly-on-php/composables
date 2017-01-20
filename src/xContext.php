@@ -16,13 +16,27 @@
         return NULL;
     }
     
+    function each ($func){
+        foreach (get_object_vars($this) as $key => $value) {
+            call_user_func($func, $value, $key, $this );
+        }
+    }
+
+    function map ($func, $curry = NULL ){
+        $curry = $curry ? $curry : new Context();
+        foreach (get_object_vars($this) as $key => $value) {
+            $curry = call_user_func($func, $curry, $value, $key, $this );
+        }
+        return $curry;
+    }
+
     function assign ($members){
         foreach ($members as $name => $value) {
             $this->$name = $value;
         }
     }
 
-    function __call($name, $args) {
+    function __call ($name, $args) {
         if (is_callable($this->$name)) {
             array_unshift($args, $this);
             return call_user_func_array($this->$name, $args);

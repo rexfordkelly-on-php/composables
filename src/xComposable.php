@@ -8,7 +8,7 @@ class xComposable {
 
     /**
         Simple helper to make including/requiring config files 
-        fluent. load will return and array.
+        fluent. load will return an array.
     */
     static function load( $path, $preserve = true ) {
         $tmp = require $path;
@@ -28,7 +28,7 @@ class xComposable {
     /**
         Read a file from the FS and 
     */
-    static function extract($path) {
+    static function extract( $path ) {
         switch(pathinfo($path)['extension'])
         {
             case "php":
@@ -45,8 +45,9 @@ class xComposable {
                 return explode("\n", file_get_contents($path));
             break;
 
-            default:
-                throw new Exception("Unknown file extension", 1);
+            default: // Will assume the file is a php script of some kind.
+                return require $path;
+                // throw new Exception("Unknown file extension", 1);
             break;
         }
     }
